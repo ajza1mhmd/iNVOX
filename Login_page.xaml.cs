@@ -19,8 +19,10 @@ namespace Invox
     /// </summary>
     public partial class Login_page : Window
     {
+        GlobalValues global = new GlobalValues();
         public Login_page()
         {
+            global.logWritter.writeLog("Bismillah",": This is the first Log....");
             InitializeComponent();
         }
 
