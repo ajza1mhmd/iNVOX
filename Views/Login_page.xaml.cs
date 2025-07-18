@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Invox
+namespace Invox.Views
 {
     /// <summary>
     /// Interaction logic for Login_page.xaml
@@ -22,13 +22,7 @@ namespace Invox
         GlobalValues global = new GlobalValues();
         public Login_page()
         {
-            global.logWritter.writeLog("Bismillah",": This is the first Log....");
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }

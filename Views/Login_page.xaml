@@ -1,13 +1,14 @@
-﻿<Window x:Class="DKMCC_INVOx.Login"
+﻿<Window x:Class="Invox.Views.Login_page"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Invox.ViewModels"
         Title="Login"
         Height="300"
         Width="400"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="#dcdde1"
-        Icon="assets/icons/app_icon.ico">
+        Icon="pack://application:,,,/assets/icons/app_icon.ico">
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="280">
