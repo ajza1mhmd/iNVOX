@@ -16,13 +16,16 @@ namespace Invox
         {
             base.OnStartup(e);
 
-            if (!File.Exists("Data/dbconfig.json"))
+            string localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string configPath = Path.Combine(localAppData, "InvoxApp", "dbconfig.json");
+
+            if (!File.Exists(configPath))
             {
                 new DBConfigWindow { DataContext = new DbConfigViewModel() }.Show();
             }
             else
             {
-                new Login_page().Show(); // will do logic in next step
+                new Login_page().Show();
             }
 
         }

@@ -13,9 +13,9 @@ namespace Invox.ViewModels
     public class DbConfigViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
-        private string _host = "";
-        private string _port = "";
+        GlobalValues global = new GlobalValues();
+        private string _host;
+        private string _port;
         private string _username;
         private string _password;
         private string _database;
@@ -62,14 +62,24 @@ namespace Invox.ViewModels
 
         public void SaveToConfig()
         {
-            var config = new { Host, Port, Username, Password, Database };
+            try
+            {
+                var config = new { Host, Port, Username, Password, Database };
 
-            string localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            string configDir = Path.Combine(localAppData, "InvoxApp");
-            Directory.CreateDirectory(configDir);
+                string localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                string configDir = Path.Combine(localAppData, "InvoxApp");
+                Directory.CreateDirectory(configDir);
 
-            string configPath = Path.Combine(configDir, "dbconfig.json");
-            File.WriteAllText(configPath, System.Text.Json.JsonSerializer.Serialize(config));
+                string configPath = Path.Combine(configDir, "dbconfig.json");
+                File.WriteAllText(configPath, System.Text.Json.JsonSerializer.Serialize(config));
+
+                MessageBox.Show("Configuration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Connection failed. Please check the database settings.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void OnPropertyChanged([CallerMemberName] string name = null)

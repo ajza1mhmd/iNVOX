@@ -27,10 +27,12 @@ namespace Invox.Views
             vm = new DbConfigViewModel();
             DataContext = vm;
         }
-        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        private void txtPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            // Sync password from PasswordBox to ViewModel
-            vm.Password = (sender as PasswordBox).Password;
+            if (DataContext is DbConfigViewModel vm)
+            {
+                vm.Password = txtPassword.Password;
+            }
         }
     }
 }

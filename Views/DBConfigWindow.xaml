@@ -24,7 +24,7 @@
                            FontWeight="SemiBold" Foreground="#2f3640"/>
                 <TextBox x:Name="txtHost" Width="220" Height="30"
                          BorderBrush="#8D80EE" BorderThickness="1"
-                         Padding="5" FontSize="14" Background="White"/>
+                         Padding="5" FontSize="14" Background="White" Text="{Binding Host, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
             <!-- Port -->
@@ -33,7 +33,7 @@
                            FontWeight="SemiBold" Foreground="#2f3640"/>
                 <TextBox x:Name="txtPort" Width="220" Height="30"
                          BorderBrush="#8D80EE" BorderThickness="1"
-                         Padding="5" FontSize="14" Background="White" Text="3306"/>
+                         Padding="5" FontSize="14" Background="White" Text="{Binding Port, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
             <!-- Username -->
@@ -42,7 +42,7 @@
                            FontWeight="SemiBold" Foreground="#2f3640"/>
                 <TextBox x:Name="txtUsername" Width="220" Height="30"
                          BorderBrush="#8D80EE" BorderThickness="1"
-                         Padding="5" FontSize="14" Background="White"/>
+                         Padding="5" FontSize="14" Background="White" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
             <!-- Password -->
@@ -51,7 +51,7 @@
                            FontWeight="SemiBold" Foreground="#2f3640"/>
                 <PasswordBox x:Name="txtPassword" Width="220" Height="30"
                              BorderBrush="#8D80EE" BorderThickness="1"
-                             Padding="5" FontSize="14" Background="White" PasswordChanged="PasswordBox_PasswordChanged" />
+                             Padding="5" FontSize="14" Background="White" PasswordChanged="txtPassword_PasswordChanged"/>
             </StackPanel>
 
             <!-- Schema -->
@@ -60,7 +60,7 @@
                            FontWeight="SemiBold" Foreground="#2f3640"/>
                 <TextBox x:Name="txtSchema" Width="220" Height="30"
                          BorderBrush="#8D80EE" BorderThickness="1"
-                         Padding="5" FontSize="14" Background="White"/>
+                         Padding="5" FontSize="14" Background="White" Text="{Binding Database, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
             <!-- Buttons -->
